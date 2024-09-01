@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Tektur-Regular';
+    src: local('Tektur-Regular'), local('Tektur-Regular'),
+    url('../fonts/Tektur-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tektur-Bold';
+    src: local('Tektur-Bold'), local('Tektur-Bold'),
+    url('../fonts/Tektur-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tektur-SemiBold';
+    src: local('Tektur-SemiBold'), local('Tektur-SemiBold'),
+    url('../fonts/Tektur-SemiBold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tektur-Black';
+    src: local('Tektur-Black'), local('Tektur-Black'),
+    url('../fonts/Tektur-Black.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Prestige';
+    src: local('Prestige'), local('Prestige'),
+    url('../fonts/Prestige.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

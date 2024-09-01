@@ -1,0 +1,180 @@
+:root {
+    --colorText: rgba(122, 122, 122, 1);
+    --colorTitleBlack: rgba(33, 33, 33, 1);
+    --colorTitleWhite: rgba(250, 250, 250, 1);
+    --colorSubtitle: rgba(230, 230, 230, 1);
+    --colorBtn: rgba(233, 190, 100, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tektur-Regular', sans-serif;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.breadcrumbs {
+    max-width: calc(1600px + 2rem);
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Unbounded-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--colorText);
+    padding: 2rem 0 5rem 0;
+}
+
+@media (max-width: 1600px) {
+    .breadcrumbs {
+        padding: calc(1rem + (2 - 1) * ((100vw - 20rem) / (123 - 20))) 0
+        calc(2rem + (5 - 2) * ((100vw - 20rem) / (123 - 20))) 0;
+        font-size: calc(.9rem + (1 - .9) * ((100vw - 20rem) / (123 - 20)));
+        line-height: calc(1rem + (1.5 - 1) * ((100vw - 20rem) / (123 - 20)));
+    }
+}
+
+.breadcrumbs a {
+    color: var(--colorBtn);
+}
+
+@media (max-width: 1600px) {
+    .breadcrumbs a {
+        font-size: calc(.9rem + (1 - .9) * ((100vw - 20rem) / (123 - 20)));
+        line-height: calc(1rem + (1.5 - 1) * ((100vw - 20rem) / (123 - 20)));
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.overlay-show {
+    visibility: visible;
+    animation: overlayShow 1s both;
+}
+
+.overlay-hide {
+    animation: overlayHide 1s both;
+}
+
+@keyframes overlayShow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .66;
+    }
+}
+
+@keyframes overlayHide {
+    from {
+        opacity: .66;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.mobileMenu__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--colorTitleBlack);
+    z-index: 1300;
+    padding: 3.33rem 1rem 1rem 1rem;
+    border: 1px solid var(--colorTitleWhite);
+    transform: translateX(105%);
+    transition: .5s;
+}
+
+.mobile__link {
+    color: var(--colorTitleWhite);
+    display: block;
+    text-decoration: none;
+    transition: .5s;
+    font-family: 'Tektur-Regular', sans-serif;
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 1.33rem 3rem;
+    margin-bottom: .33rem;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.mobile__link:hover {
+    border: 2px solid var(--colorBtn);
+}
+
+@media (max-width: 1800px) {
+    .mobile__link {
+        font-size: calc(.8rem + (1 - .8) * ((100vw - 20rem) / (112.5 - 20)));
+        line-height: calc(.8rem + (1 - .8) * ((100vw - 20rem) / (112.5 - 20)));
+        padding: calc(.8rem + (1.33 - .8) * ((100vw - 20rem) / (112.5 - 20)))
+        calc(2rem + (3 - 2) * ((100vw - 20rem) / (112.5 - 20)));
+    }
+}
+
+.burger__close {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--colorBtn);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    transition: .5s;
+    opacity: .8;
+}
+
+.burger__close span {
+    position: absolute;
+    width: 76%;
+    height: 2px;
+    left: 50%;
+    top:50%;
+    background-color: var(--colorBtn);
+    transition: .5s;
+}
+
+.burger__close span:nth-of-type(1) {
+    transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+.burger__close span:nth-of-type(2) {
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+.burger__close:hover {
+    opacity: 1;
+}
+
+.open__mobile {
+    transform: translateX(0);
+}
+
+.no-scroll {
+    overflow-y: scroll; /* Разрешает видимость полосы прокрутки */
+    position: fixed; /* Запрещает прокрутку страницы */
+    width: 100%; /* Фиксирует ширину страницы */
+}
